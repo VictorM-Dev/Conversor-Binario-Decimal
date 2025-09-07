@@ -31,7 +31,7 @@ int binario_decimal(int numero){
     int contador = 0, registro = numero;
     do{
         //Verifica se todos os dígitos do binário são 0 ou 1
-        if(numero%10 != 0 && numero%10 != 1) return 2;
+        if(numero%10 != 0 && numero%10 != 1) return -1;
         numero /= 10;
         contador++;
     }while(numero != 0);
@@ -67,7 +67,7 @@ int main(){
     if(opcao == 1){
         printf("\nDigite o número em binário para conversão: ");
         scanf("%d", &numero);
-        if(binario_decimal(numero) == 2) {
+        if(binario_decimal(numero) == -1) {
             printf("\nO número digitado não é um número binário");
         } else {
             printf("\nO número binário %d em decimal é %d.", numero, binario_decimal(numero));
